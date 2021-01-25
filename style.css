@@ -1,0 +1,423 @@
+/******************************************
+ * WEB222NAA
+ * Final Assessment
+ * Name: Thi My Phuc Huynh (Mindy).
+ * Student ID: 149792186.
+ * Date: July, 29, 2020
+ ********************************************/
+
+/* Include fonts from Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Gayathri:wght@700&family=Nanum+Gothic+Coding&family=Satisfy&family=ZCOOL+XiaoWei&display=swap');
+
+/* Include Google's Material Icons - https://google.github.io/material-design-icons */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+/* Include Font awesome library for social media icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* body style */
+html,
+body {
+  height: 100%; /* the content of the page will occupy the whole space of browser */
+}
+
+body {
+  background-color: #f8edf5;
+  color: #251f44;
+  font-family: 'Gayathri', sans-serif;
+  width: 100%;
+
+  max-width: 900px;
+  min-width: 400px;
+
+  /* auto change the margin left and right to make sure the body at the center of the page */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header */
+header {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8edf5;
+}
+
+a {
+  text-decoration: none;
+}
+
+header a:hover {
+  text-decoration: none;
+  color: #126daf;
+}
+
+header a {
+  color: #251f44;
+}
+.store_name {
+  font-size: 2em;
+  font-weight: 900;
+  font-family: 'ZCOOL XiaoWei', serif;
+  margin-left: 15px;
+  color: #ce0f3d;
+}
+
+.store_name a {
+  color: #ce0f3d;
+}
+
+header p {
+  margin: 0; /* eliminate the margin of the store name */
+}
+
+#user_option {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 400px;
+  padding-top: 20px;
+}
+
+#search_wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 0;
+  padding-top: 15px;
+}
+
+#search_wrapper input {
+  flex: 1;
+  max-width: 700px;
+  height: 27px;
+  vertical-align: bottom;
+  border: 1px solid #ce0f3d;
+  color: #251f44;
+  background-color: #f8edf5;
+  font-size: 1em;
+  padding-left: 10px;
+  font-family: 'Gayathri', sans-serif;
+  padding-top: 5px;
+}
+
+#search_wrapper button {
+  height: 35px;
+  margin-left: -6px;
+  padding-top: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 0;
+  border: 1px solid #ce0f3d;
+  color: #f54291;
+  background-color: #ffe0f7;
+}
+
+/* Fixed header on scroll, reference from https://www.w3schools.com/ */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Navigation bar */
+.nav_bar {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  height: 40px;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.nav_bar p {
+  color: black;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#nav_alls {
+  background-color: #f54291;
+  align-items: center;
+  padding-top: 25px;
+  padding-left: 25px;
+  width: 10%;
+  height: 100%;
+}
+
+#nav_cupcakes {
+  background-color: #ff78ae;
+  align-items: center;
+  padding-top: 25px;
+  padding-left: 50px;
+  width: 30%;
+  height: 100%;
+}
+
+#nav_donuts {
+  background-color: #ffa0d2;
+  align-items: center;
+  padding-top: 25px;
+  padding-left: 50px;
+  margin-left: -6px;
+  width: 30%;
+  height: 100%;
+}
+
+#nav_macaroons {
+  background-color: #fff8cd;
+  align-items: center;
+  padding-top: 25px;
+  padding-left: 50px;
+  margin-left: -6px;
+  width: 30%;
+  height: 100%;
+}
+
+/* slogan */
+#slogan_area {
+  position: relative;
+  text-align: center;
+}
+
+#slogan_area img {
+  width: 100%;
+  height: 250px;
+  opacity: 0.7;
+  margin-top: 6px;
+}
+
+#slogan_area p {
+  font-family: 'Satisfy', cursive;
+  font-size: 40px;
+  font-weight: bolder;
+  font-style: oblique;
+  position: absolute;
+  z-index: 100;
+  top: 15px;
+  background-color: #ffe0f7;
+  width: 80%;
+  opacity: 0.85;
+  border-radius: 4px;
+  color: #f54291;
+  padding: 5px;
+  padding-right: 10px;
+}
+
+/* subtitle */
+#subtitle {
+  color: #f54291;
+  font-family: 'ZCOOL XiaoWei', serif;
+  padding-left: 10px;
+  margin: 15px;
+}
+
+/* Content (product area) */
+#content {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+}
+
+.product_card_wrapper {
+  display: block;
+  height: 300px;
+  margin: 10px;
+  border-bottom: 1px solid lightgrey;
+  text-align: center;
+}
+
+.product_card_image img {
+  width: 200px;
+  height: 133px;
+}
+
+.product_card_info {
+  flex: 1;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.product_card_info h2 {
+  font-family: 'ZCOOL XiaoWei', serif;
+  font-size: 1.2em;
+  color: #251f44;
+  margin: 0;
+}
+
+.product_card_info p {
+  font-size: 0.9em;
+  color: #27496d;
+}
+
+/* footer */
+footer {
+  background-color: #ffe0f7;
+  font-size: 0.8em;
+}
+
+.footer_wrapper section {
+  display: flex;
+  align-content: flex-end;
+}
+
+/* Footer - section 1 */
+#section_1 {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 5px;
+  border-bottom: 1px solid white;
+}
+
+.social {
+  margin-right: 3em;
+}
+
+.social_text {
+  padding: 0;
+  margin: 0;
+  margin-left: 10px;
+  font-size: 1.2em;
+  color: #251f44;
+  text-align: center;
+}
+
+.social_text h4 {
+  font-weight: bolder;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.social_text p {
+  margin: 0;
+  font-size: 0.8em;
+  color: #383e56;
+}
+
+/* social media icons reference from https://fontawesome.com/ */
+.fa {
+  padding: 10px;
+  font-size: 50px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3b5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55acee;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
+}
+
+/* Footer section 2 */
+#section_2 {
+  justify-content: space-between;
+  vertical-align: middle;
+}
+
+.contact_info {
+  margin: 20px;
+}
+
+.contact_info p {
+  color: black;
+  font-size: 1.1em;
+}
+
+/* subscribe form */
+.subscribe {
+  margin: 3em;
+  padding: 1em 3em 1em 1em;
+  display: flex;
+  background-color: #fff591;
+  justify-content: space-around;
+  align-items: center;
+  color: black;
+}
+
+#subscribe_icon {
+  width: 20%;
+  padding: 1em 2em;
+  margin-right: 2em;
+  font-size: 1.2em;
+  font-weight: bolder;
+  border-right: 1px solid white;
+  text-align: center;
+}
+
+#subscribe_icon i {
+  font-size: 4em;
+  color: #3f3f44;
+  text-align: center;
+}
+
+.form_area {
+  display: grid;
+  grid-gap: 1em;
+  width: 80%;
+}
+
+.form_area label {
+  text-align: center;
+  font-weight: 900;
+  font-family: 'ZCOOL XiaoWei', serif;
+}
+
+.form_area input {
+  padding: 0.3em;
+  border: 1px solid #3f3f44;
+  border-radius: 0.2em;
+  height: 1.5em;
+  width: 20em;
+}
+.form_area ::placeholder {
+  font-family: 'Gayathri', sans-serif;
+}
+
+.form_area button {
+  font-family: 'Gayathri', sans-serif;
+  padding: 0.2em;
+  border: 1px solid #3f3f44;
+  border-radius: 0.2em;
+  color: white;
+  background-color: #ce0f3d;
+  text-align: center;
+  line-height: 1.5em;
+  cursor: pointer;
+}
+
+#subscribe_form {
+  line-height: 1.5em;
+  padding-right: 15px;
+}
+
+#copyright {
+  text-align: center;
+}
+
+
+
+
+

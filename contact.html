@@ -1,0 +1,321 @@
+<!-- ******************************************
+ * WEB222NAA
+ * Final Assessment
+ * Name: Thi My Phuc Huynh (Mindy).
+ * Student ID: 149792186.
+ * Date: July, 29, 2020
+ ********************************************-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>WEB222 Store</title>
+    <!-- Include Bootstrap stylesheet  -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!-- Include stylesheet - same with index.html for the same background color and basic style -->
+    <link rel="stylesheet" href="style.css" type="text/css" />
+
+    <!-- style that is different from home page -->
+    <style>
+      .nav_bar {
+        background-color: #f54291;
+      }
+      .container {
+        width: 80%;
+
+        margin: 1em auto;
+        border: 1px solid #ce0f3d;
+        padding: 1em;
+        background-color: #faeaf6;
+      }
+      #a-contact {
+        color: #ce0f3d;
+        font-weight: bolder;
+        font-size: 1.1em;
+      }
+      .btn {
+        color: white;
+        background-color: #ce0f3d;
+        border-color: #ce0f3d;
+      }
+
+      /* hide Order Number input box */
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header starts -->
+    <header id="header">
+      <div class="store_name"><a href="index.html">Mindy's eDessert</a></div>
+
+      <div id="user_option">
+        <p><a href="index.html">Home</a></p>
+        <p><a href="contact.html" id="a-contact">Contact us</a></p>
+      </div>
+    </header>
+    <!-- Header ends -->
+
+    <main>
+      <nav class="nav_bar"></nav>
+
+      <div class="container">
+        <form id="contact-form" action="https://httpbin.org/post" method="post">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="firstname">First Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="firstname"
+                tabindex="1"
+                autocomplete="given-name"
+                required
+              />
+              <div class="invalid-feedback">
+                Please input your First Name
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="lastname">Last Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="lastname"
+                tabindex="2"
+                autocomplete="family-name"
+                required
+              />
+              <div class="invalid-feedback">
+                Please input your Last Name
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-email">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="contact-email"
+              placeholder="example@gmail.com"
+              tabindex="3"
+              autocomplete="email"
+              required
+            />
+            <div class="invalid-feedback">
+              Please input your Email
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input
+              type="text"
+              class="form-control"
+              id="address"
+              placeholder="1234 Main St"
+              tabindex="4"
+              autocomplete="off"
+              required
+            />
+            <div class="invalid-feedback">
+              Please input your Address
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="city">City</label>
+              <input type="text" class="form-control" id="city" tabindex="5" required />
+              <datalist id="cityList">
+                <option value="Toronto"></option>
+                <option value="Edmonton"></option>
+                <option value="Hamilton"></option>
+                <option value="London"></option>
+                <option value="Mississauga"></option>
+                <option value="Brampton"></option>
+                <option value="Markham"></option>
+                <option value="Richmond Hill"></option>
+                <option value="Vancouver"></option>
+                <option value="Ottawa"></option>
+                <option value="Montreal"></option>
+                <option value="Calgary"></option>
+                <option value="Victoria"></option>
+                <option value="Quebec"></option>
+                <option value="Saskatoon"></option>
+              </datalist>
+              <div class="invalid-feedback">
+                Please input City
+              </div>
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="province">Province</label>
+              <select type="text" class="form-control" id="province" tabindex="6" required>
+                <option selected>Select Province</option>
+                <option value="Ontario">Ontario</option>
+                <option value="Quebec">Quebec</option>
+                <option value="Nova Scotia">Nova Scotia</option>
+                <option value="New Brunswick">New Brunswick</option>
+                <option value="Manitoba">Manitoba</option>
+                <option value="British Columbia">British Columbia</option>
+                <option value="Prince Edward Island">Prince Edward Island</option>
+                <option value="Saskatchewan">Saskatchewan</option>
+                <option value="Alberta">Alberta</option>
+                <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="postalCode">Postal Code</label>
+              <input
+                type="text"
+                class="form-control"
+                id="postalCode"
+                pattern="^[A-Za-z]\d[A-Za-z][ ]{0,1}\d[A-Za-z]\d$"
+                placeholder="M2T 3J6"
+                tabindex="7"
+                required
+              />
+              <div class="invalid-feedback">
+                Please enter a valid Canadian Postal Code
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col form-group">
+              <label class="mr-2">Type of message</label>
+              <div class="form-check form-check-inline d-flex flex-row">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="radio-question"
+                  value="question"
+                  tabindex="8"
+                  checked
+                />
+                <label class="form-check-label" for="radio-question">Question</label>
+              </div>
+              <div class="form-check form-check-inline d-flex flex-row">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="radio-comment"
+                  value="comment"
+                  tabindex="9"
+                />
+                <label class="form-check-label" for="radio-comment">Comment</label>
+              </div>
+              <div class="form-check form-check-inline d-flex flex-row">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="radio-order-problem"
+                  value="order-problem"
+                  tabindex="10"
+                />
+                <label class="form-check-label" for="order-problem">Order Problem</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="order-problem-details" class="hidden">Order Number</label>
+            <input
+              type="text"
+              class="form-control hidden"
+              id="order-problem-details"
+              autocomplete="off"
+              tabindex="11"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea class="form-control" id="message" rows="3" tabindex="12" required></textarea>
+            <div class="invalid-feedback">
+              Please input a message
+            </div>
+          </div>
+
+          <input type="hidden" id="storeName" name="storeName" value="Mindy's eDessert" />
+
+          <button type="submit" class="btn btn-primary" tabindex="13">Submit</button>          
+          
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <!-- Copyright -->
+      <div id="copyright">&copy Copyright 2020 - Mindy - images from unsplash.com</div>
+    </footer>
+
+    <!-- I put script here because I want it separated from script of the home page -->
+
+    <!-- Script from Bootstrap -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- custom script -->
+    <script>
+      window.onload = function() {
+        // dynamically reveal input box for Order Number when Order Problem is checked
+        
+        // get all radio buttons attach change event to each
+        document.querySelectorAll('input[name="inlineRadioOptions"]')        
+        .forEach(radio => radio.onchange = function(event) {
+          let radio = event.target;
+          let orderProblemDetails = document.querySelector('#order-problem-details')
+        	if(radio.value === 'order-problem') {
+          	// un-hide the order problem details div
+            orderProblemDetails.classList.remove('hidden');
+          } else {
+            // hide the order problem details div
+	          orderProblemDetails.classList.add('hidden');
+          }
+        })
+        
+        // check validity when user submit the form
+        let form = document.querySelector('#contact-form');
+        form.onsubmit = function(event) {
+          console.log("onsubmit");
+          if (!form.checkValidity()) {
+            form.classList.add('was-validated');            
+            event.preventDefault();
+            return false;
+          }
+          return true;
+        };
+      };
+    </script>
+    
+  </body>
+</html>
